@@ -1,1 +1,1322 @@
-Hola Mundo :)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trujillana Multi Service Solutions – Your Property, Professionally Managed.</title>
+    <link rel="icon" href="img/logo.ico" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --royal: #2B4F9F;
+            --royal-dark: #1e3a7a;
+            --lime: #7FD18C;
+            --lime-light: #9fe1aa;
+            --lime-dark: #5cb96d;
+            --white: #ffffff;
+            --offwhite: #f8fafb;
+            --gray: #4a5568;
+            --dark: #1a202c;
+            --border: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden
+        }
+
+        /* ═══ NAV ═══ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(43, 79, 159, .15);
+            border-bottom: 3px solid var(--lime);
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: .8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            text-decoration: none
+        }
+
+        .logo-link img {
+            height: 56px;
+            width: auto
+        }
+
+        .brand-txt {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1
+        }
+
+        .brand-txt .top {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--royal);
+            letter-spacing: 1px;
+            text-transform: uppercase
+        }
+
+        .brand-txt .bot {
+            font-size: .65rem;
+            color: var(--lime-dark);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--royal);
+            font-weight: 700;
+            font-size: .92rem;
+            transition: color .3s;
+            position: relative;
+            padding-bottom: 3px
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--lime);
+            transition: width .3s
+        }
+
+        .nav-list a:hover {
+            color: var(--lime-dark)
+        }
+
+        .nav-list a:hover::after {
+            width: 100%
+        }
+
+        .ham {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer
+        }
+
+        .ham span {
+            width: 24px;
+            height: 3px;
+            background: var(--royal);
+            transition: all .3s;
+            border-radius: 2px
+        }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            margin-top: 76px;
+            min-height: 92vh;
+            background: linear-gradient(135deg, var(--royal) 0%, var(--royal-dark) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* wave pattern overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(127, 209, 140, .08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(127, 209, 140, .06) 0%, transparent 50%);
+        }
+
+        .hero-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 3rem;
+            align-items: center
+        }
+
+        .hero-left {}
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: rgba(127, 209, 140, .2);
+            border: 1px solid rgba(127, 209, 140, .4);
+            color: var(--lime-light);
+            padding: .35rem 1rem;
+            border-radius: 50px;
+            font-size: .75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.08;
+            margin-bottom: 1.1rem;
+        }
+
+        .hero h1 .hl {
+            color: var(--lime)
+        }
+
+        .hero .motto {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: var(--lime-light);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .hero .txt {
+            color: rgba(255, 255, 255, .75);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            max-width: 540px;
+            margin-bottom: 2.5rem
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap
+        }
+
+        .btn-lime {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .95rem 2.2rem;
+            background: var(--lime);
+            color: var(--royal);
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all .3s;
+            font-size: .95rem;
+            border: 2px solid var(--lime);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .btn-lime:hover {
+            background: var(--lime-dark);
+            border-color: var(--lime-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(127, 209, 140, .4)
+        }
+
+        .btn-out {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .95rem 2.2rem;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .4);
+            color: var(--white);
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all .3s;
+            font-size: .95rem;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .btn-out:hover {
+            border-color: var(--lime);
+            background: rgba(127, 209, 140, .15)
+        }
+
+        /* hero right — feature boxes */
+        .hero-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem
+        }
+
+        .hbox {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 12px;
+            padding: 1.6rem 1.3rem;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            transition: all .3s;
+        }
+
+        .hbox:hover {
+            background: rgba(127, 209, 140, .15);
+            border-color: var(--lime);
+            transform: translateY(-5px)
+        }
+
+        .hbox .icon {
+            font-size: 2rem;
+            color: var(--lime);
+            margin-bottom: .7rem
+        }
+
+        .hbox .val {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--white);
+            display: block;
+            line-height: 1
+        }
+
+        .hbox .lbl {
+            font-size: .8rem;
+            color: rgba(255, 255, 255, .65);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: .3rem;
+            font-weight: 700
+        }
+
+        /* ═══ SECTION BASE ═══ */
+        section {
+            padding: 6rem 2rem
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto
+        }
+
+        .sec-tag {
+            display: inline-block;
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--royal);
+            background: rgba(43, 79, 159, .08);
+            padding: .3rem 1rem;
+            border-radius: 50px;
+            border: 1px solid rgba(43, 79, 159, .2);
+            margin-bottom: .8rem;
+        }
+
+        .sec-h {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--royal);
+            margin-bottom: .6rem;
+            line-height: 1.1
+        }
+
+        .sec-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--royal), var(--lime));
+            border-radius: 2px;
+            margin: .8rem 0 1.1rem
+        }
+
+        .sec-desc {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.75
+        }
+
+        /* ═══ ABOUT ═══ */
+        .about {
+            background: var(--offwhite)
+        }
+
+        .ab-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start
+        }
+
+        .ab-text p {
+            color: var(--gray);
+            line-height: 1.85;
+            font-size: 1.05rem;
+            margin-bottom: 1.1rem
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 2rem
+        }
+
+        .mv-item {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(43, 79, 159, .08);
+            border-top: 4px solid var(--royal);
+            transition: transform .3s;
+        }
+
+        .mv-item:hover {
+            transform: translateY(-5px)
+        }
+
+        .mv-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--royal);
+            margin-bottom: .6rem;
+            font-weight: 800
+        }
+
+        .mv-item p {
+            font-size: .92rem;
+            color: var(--gray);
+            line-height: 1.7
+        }
+
+        /* benefits panel */
+        .ben-panel {
+            background: linear-gradient(135deg, var(--royal) 0%, var(--royal-dark) 100%);
+            padding: 2.5rem;
+            border-radius: 14px;
+            color: var(--white);
+            box-shadow: 0 12px 40px rgba(43, 79, 159, .25);
+        }
+
+        .ben-panel h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 900
+        }
+
+        .ben-panel h3 span {
+            color: var(--lime)
+        }
+
+        .ben-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: .7rem;
+            background: rgba(255, 255, 255, .06);
+            border-radius: 8px;
+            border-left: 3px solid var(--lime);
+            transition: all .3s;
+        }
+
+        .ben-item:hover {
+            background: rgba(127, 209, 140, .15);
+            transform: translateX(5px)
+        }
+
+        .ben-icon {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background: var(--lime);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--royal);
+            font-size: .85rem;
+            font-weight: 900;
+        }
+
+        .ben-item p {
+            font-size: .93rem;
+            color: rgba(255, 255, 255, .9);
+            font-weight: 600
+        }
+
+        /* ═══ SERVICES ═══ */
+        .services {
+            background: var(--white)
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.6rem
+        }
+
+        .svc-card {
+            background: var(--offwhite);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all .35s;
+        }
+
+        .svc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--royal), var(--lime));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s;
+        }
+
+        .svc-card:hover {
+            border-color: var(--lime);
+            box-shadow: 0 12px 35px rgba(127, 209, 140, .2);
+            transform: translateY(-8px);
+            background: var(--white)
+        }
+
+        .svc-card:hover::before {
+            transform: scaleX(1)
+        }
+
+        .svc-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--royal), var(--royal-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 1.1rem;
+            transition: all .3s;
+        }
+
+        .svc-card:hover .svc-icon {
+            background: linear-gradient(135deg, var(--lime), var(--lime-dark));
+            color: var(--royal)
+        }
+
+        .svc-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            color: var(--royal);
+            margin-bottom: .7rem;
+            font-weight: 800
+        }
+
+        .svc-card ul {
+            list-style: none
+        }
+
+        .svc-card ul li {
+            font-size: .84rem;
+            color: var(--gray);
+            padding: .3rem 0;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            border-bottom: 1px dashed rgba(0, 0, 0, .06)
+        }
+
+        .svc-card ul li:last-child {
+            border: none
+        }
+
+        .svc-card ul li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            min-width: 5px;
+            background: var(--lime);
+            border-radius: 50%
+        }
+
+        /* ═══ GALLERY ═══ */
+        .gallery {
+            background: var(--royal)
+        }
+
+        .gallery .sec-h {
+            color: var(--white)
+        }
+
+        .gallery .sec-tag {
+            background: rgba(127, 209, 140, .2);
+            color: var(--lime);
+            border-color: rgba(127, 209, 140, .4)
+        }
+
+        .gallery .sec-desc {
+            color: rgba(255, 255, 255, .65)
+        }
+
+        .gallery .sec-line {
+            background: linear-gradient(90deg, var(--lime), rgba(127, 209, 140, .3))
+        }
+
+        .gal-shell {
+            max-width: 980px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+            border: 3px solid rgba(127, 209, 140, .3);
+        }
+
+        .gal-stage {
+            position: relative;
+            height: 570px;
+            background: #0d1a2d;
+            overflow: hidden
+        }
+
+        .gslide {
+            display: none;
+            width: 100%;
+            height: 100%
+        }
+
+        .gslide.on {
+            display: block;
+            animation: gIn .5s ease
+        }
+
+        @keyframes gIn {
+            from {
+                opacity: 0;
+                transform: scale(1.03)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        .gslide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .9
+        }
+
+        .gslide-grad {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(43, 79, 159, .6) 0%, transparent 50%)
+        }
+
+        .gal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--lime);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--royal);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            z-index: 5;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .4);
+        }
+
+        .gal-nav:hover {
+            background: var(--lime-dark);
+            transform: translateY(-50%) scale(1.12)
+        }
+
+        .gal-prev {
+            left: 20px
+        }
+
+        .gal-next {
+            right: 20px
+        }
+
+        .gal-num {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, .75);
+            color: var(--lime);
+            padding: .5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 800;
+            font-size: .9rem;
+            letter-spacing: 1px;
+            border: 1px solid rgba(127, 209, 140, .4);
+        }
+
+        /* ═══ CONTACT ═══ */
+        .contact {
+            background: var(--offwhite)
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--royal) 0%, var(--royal-dark) 100%);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(43, 79, 159, .3);
+            border-top: 4px solid var(--lime);
+        }
+
+        .contact-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: .4rem;
+            font-weight: 900
+        }
+
+        .contact-box .sub {
+            color: rgba(255, 255, 255, .6);
+            font-size: .9rem;
+            margin-bottom: 2rem;
+            font-style: italic
+        }
+
+        .cinfo {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .cinfo:last-of-type {
+            border: none;
+            padding-bottom: 0
+        }
+
+        .cinfo-icon {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            background: rgba(127, 209, 140, .2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--lime);
+            font-size: 1.05rem;
+        }
+
+        .cinfo .data strong {
+            display: block;
+            font-size: .7rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, .45);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: .25rem;
+        }
+
+        .cinfo .data span {
+            color: rgba(255, 255, 255, .95);
+            font-size: .98rem;
+            font-weight: 600
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .8rem;
+            margin-top: 2rem
+        }
+
+        .cta-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: .88rem;
+            letter-spacing: .3px;
+            transition: all .3s;
+            text-transform: uppercase;
+        }
+
+        .cta-link:hover {
+            transform: translateY(-3px)
+        }
+
+        .cta-phone {
+            background: var(--lime);
+            color: var(--royal)
+        }
+
+        .cta-phone:hover {
+            background: var(--lime-dark);
+            box-shadow: 0 8px 25px rgba(127, 209, 140, .4)
+        }
+
+        .cta-wa {
+            background: #25d366;
+            color: var(--white)
+        }
+
+        .cta-wa:hover {
+            background: #1db954;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, .3)
+        }
+
+        .cta-email {
+            background: rgba(255, 255, 255, .1);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, .15)
+        }
+
+        .cta-email:hover {
+            background: rgba(255, 255, 255, .2)
+        }
+
+        .cta-sms {
+            background: rgba(127, 209, 140, .25);
+            color: var(--lime);
+            border: 1px solid rgba(127, 209, 140, .3)
+        }
+
+        .cta-sms:hover {
+            background: var(--lime);
+            color: var(--royal)
+        }
+
+        .map-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 520px;
+            border: 2px solid var(--border);
+            box-shadow: 0 10px 30px rgba(43, 79, 159, .15);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none
+        }
+
+        /* ═══ FOOTER ═══ */
+        footer {
+            background: var(--dark);
+            border-top: 4px solid var(--lime);
+            padding: 2.5rem;
+            text-align: center;
+            color: rgba(255, 255, 255, .6)
+        }
+
+        .foot-wrap {
+            max-width: 1280px;
+            margin: 0 auto
+        }
+
+        .foot-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: .3rem;
+            font-weight: 900;
+            text-transform: uppercase
+        }
+
+        .foot-brand span {
+            color: var(--lime)
+        }
+
+        .foot-slogan {
+            color: var(--lime);
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-style: italic;
+            margin-bottom: .8rem
+        }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media(max-width:1100px) {
+            .svc-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        @media(max-width:768px) {
+            .ham {
+                display: flex
+            }
+
+            .nav-list {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: .8rem;
+                border-bottom: 2px solid var(--lime);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+            }
+
+            .nav-list.active {
+                display: flex
+            }
+
+            .hero-wrap,
+            .ab-layout,
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+
+            .hero h1 {
+                font-size: 2.8rem
+            }
+
+            .svc-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .gal-stage {
+                height: 360px
+            }
+
+            .mv-grid,
+            .hero-boxes {
+                grid-template-columns: 1fr
+            }
+
+            .cta-grid {
+                grid-template-columns: 1fr
+            }
+
+            .sec-h {
+                font-size: 2.2rem
+            }
+        }
+
+        @media(max-width:480px) {
+
+            .svc-grid,
+            .hero-boxes {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══ NAV ═══ -->
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="#home" class="logo-link">
+                <img src="img/logo.png" alt="Trujillana Multi Service Solutions">
+                <div class="brand-txt">
+                    <span class="top">Trujillana</span>
+                    <span class="bot">Multi Service Solutions</span>
+                </div>
+            </a>
+            <div class="ham" id="hamburger"><span></span><span></span><span></span></div>
+            <ul class="nav-list" id="navList">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section id="home" class="hero">
+        <div class="hero-wrap">
+            <div class="hero-left">
+                <div class="hero-tag"><i class="fas fa-map-marker-alt"></i> Silver Spring, MD — 10+ Years Experience
+                </div>
+                <h1>Your Property,<br><span class="hl">Professionally</span><br>Managed.</h1>
+                <p class="motto">"Comprehensive Solutions for Every Property Need."</p>
+                <p class="txt">Trujillana Multi Service Solutions provides comprehensive property services including
+                    painting, remodeling, cleaning, maintenance, landscaping, and junk removal for residential and
+                    commercial properties.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-lime"><i class="fas fa-phone"></i> Free Quote</a>
+                    <a href="#services" class="btn-out"><i class="fas fa-list"></i> Our Services</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-boxes">
+                    <div class="hbox">
+                        <div class="icon"><i class="fas fa-award"></i></div><span class="val">10+</span><span
+                            class="lbl">Years Experience</span>
+                    </div>
+                    <div class="hbox">
+                        <div class="icon"><i class="fas fa-tools"></i></div><span class="val">5</span><span
+                            class="lbl">Core Services</span>
+                    </div>
+                    <div class="hbox">
+                        <div class="icon"><i class="fas fa-star"></i></div><span class="val">100%</span><span
+                            class="lbl">Quality Guaranteed</span>
+                    </div>
+                    <div class="hbox">
+                        <div class="icon"><i class="fas fa-headset"></i></div><span class="val">24/7</span><span
+                            class="lbl">Support Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="ab-layout">
+                <div class="ab-text">
+                    <span class="sec-tag">Our Company</span>
+                    <h2 class="sec-h">Who We Are</h2>
+                    <div class="sec-line"></div>
+                    <p>Trujillana Multi Service Solutions is a Maryland-based property service company led by
+                        <strong>Florinda Rojas</strong>. Our company was built on responsibility, hard work, and a
+                        strong commitment to delivering dependable results.</p>
+                    <p>We understand that maintaining and improving a property requires versatility and attention to
+                        detail. That is why we offer complete multi-service solutions tailored to homeowners, property
+                        managers, and businesses throughout Silver Spring and surrounding areas.</p>
+                    <p>Our goal is to provide efficient, organized, and high-quality services that increase property
+                        value, improve appearance, and ensure long-term functionality.</p>
+                    <div class="mv-grid">
+                        <div class="mv-item">
+                            <h4>Our Mission</h4>
+                            <p>Provide reliable and professional property services with integrity, efficiency, and
+                                attention to detail — ensuring customer satisfaction in every project.</p>
+                        </div>
+                        <div class="mv-item">
+                            <h4>Our Vision</h4>
+                            <p>Become a trusted multi-service company in Maryland, recognized for versatility, quality
+                                workmanship, and consistent results.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ab-right">
+                    <div class="ben-panel">
+                        <h3>The <span>Benefit</span> to Choosing Us</h3>
+                        <div class="ben-item">
+                            <div class="ben-icon"><i class="fas fa-check"></i></div>
+                            <p>Quality Workmanship – We treat every project as if it were our own home.</p>
+                        </div>
+                        <div class="ben-item">
+                            <div class="ben-icon"><i class="fas fa-check"></i></div>
+                            <p>Reliable & On-Time – We value your time and deliver according to schedule.</p>
+                        </div>
+                        <div class="ben-item">
+                            <div class="ben-icon"><i class="fas fa-check"></i></div>
+                            <p>Affordable Prices – Competitive rates with guaranteed satisfaction.</p>
+                        </div>
+                        <div class="ben-item">
+                            <div class="ben-icon"><i class="fas fa-check"></i></div>
+                            <p>Fully Insured & Professional – You can trust our licensed and experienced team.</p>
+                        </div>
+                        <div class="ben-item">
+                            <div class="ben-icon"><i class="fas fa-check"></i></div>
+                            <p>Customer-Focused Approach – We listen, adapt, and exceed expectations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SERVICES ═══ -->
+    <section id="services" class="services">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3rem">
+                <span class="sec-tag">What We Offer</span>
+                <h2 class="sec-h">Our Services</h2>
+                <div class="sec-line" style="margin:auto"></div>
+                <p class="sec-desc" style="max-width:620px;margin:1rem auto">Comprehensive property solutions for every
+                    need</p>
+            </div>
+            <div class="svc-grid">
+                <div class="svc-card">
+                    <div class="svc-icon"><i class="fas fa-paint-roller"></i></div>
+                    <h3>Painting</h3>
+                    <ul>
+                        <li>Interior painting</li>
+                        <li>Exterior painting</li>
+                        <li>Residential & commercial</li>
+                        <li>Repaints & touch-ups</li>
+                    </ul>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Remodeling</h3>
+                    <ul>
+                        <li>Interior renovations</li>
+                        <li>Kitchen upgrades</li>
+                        <li>Bathroom remodeling</li>
+                        <li>Flooring installation</li>
+                    </ul>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-icon"><i class="fas fa-wrench"></i></div>
+                    <h3>Maintenance</h3>
+                    <ul>
+                        <li>General property maintenance</li>
+                        <li>Preventive maintenance</li>
+                        <li>Minor repairs</li>
+                        <li>Rental upkeep</li>
+                    </ul>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-icon"><i class="fas fa-broom"></i></div>
+                    <h3>Cleaning</h3>
+                    <ul>
+                        <li>Commercial cleaning</li>
+                        <li>Move-in/out cleaning</li>
+                        <li>Post-construction</li>
+                        <li>Deep cleaning</li>
+                    </ul>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Landscaping</h3>
+                    <ul>
+                        <li>Lawn maintenance</li>
+                        <li>Yard clean-up</li>
+                        <li>Mulching & trimming</li>
+                        <li>Exterior upkeep</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ GALLERY ═══ -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3rem">
+                <span class="sec-tag">Portfolio</span>
+                <h2 class="sec-h">Our Work</h2>
+                <div class="sec-line" style="margin:auto"></div>
+                <p class="sec-desc" style="max-width:550px;margin:1rem auto">Professional results that speak for
+                    themselves</p>
+            </div>
+            <div class="gal-shell">
+                <div class="gal-stage" id="galStage">
+                    <div class="gslide on"><img src="img/1.jpg" alt="Project 1">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/2.jpg" alt="Project 2">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/3.jpg" alt="Project 3">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/4.jpg" alt="Project 4">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/5.jpg" alt="Project 5">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/6.jpg" alt="Project 6">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/7.jpg" alt="Project 7">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/8.jpg" alt="Project 8">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/9.jpg" alt="Project 9">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/10.jpg" alt="Project 10">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/11.jpg" alt="Project 11">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/12.jpg" alt="Project 12">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/13.jpg" alt="Project 13">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/14.jpg" alt="Project 14">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/15.jpg" alt="Project 15">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <button class="gal-nav gal-prev" id="gPrev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gal-nav gal-next" id="gNext"><i class="fas fa-chevron-right"></i></button>
+                    <div class="gal-num" id="gNum">1 / 15</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3rem">
+                <span class="sec-tag">Get In Touch</span>
+                <h2 class="sec-h">Contact Us</h2>
+                <div class="sec-line" style="margin:auto"></div>
+                <p class="sec-desc" style="max-width:520px;margin:1rem auto">Request a free estimate — we respond
+                    promptly</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <h3>Let's Work Together</h3>
+                    <p class="sub">Your property deserves professional care. Reach out today.</p>
+                    <div class="cinfo">
+                        <div class="cinfo-icon"><i class="fas fa-user-tie"></i></div>
+                        <div class="data"><strong>Owner</strong><span>Florinda Rojas</span></div>
+                    </div>
+                    <div class="cinfo">
+                        <div class="cinfo-icon"><i class="fas fa-phone"></i></div>
+                        <div class="data"><strong>Phone</strong><span>202-860-4083</span></div>
+                    </div>
+                    <div class="cinfo">
+                        <div class="cinfo-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="data"><strong>Email</strong><span>admin@trujillanamss.com</span></div>
+                    </div>
+                    <div class="cinfo">
+                        <div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="data"><strong>Address</strong><span>2 Piping Rock Dr, Silver Spring, MD 20905</span>
+                        </div>
+                    </div>
+                    <div class="cta-grid">
+                        <a href="tel:2028604083" class="cta-link cta-phone"><i class="fas fa-phone"></i> Call Now</a>
+                        <a href="https://wa.me/12028604083" target="_blank" class="cta-link cta-wa"><i
+                                class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="mailto:admin@trujillanamss.com" class="cta-link cta-email"><i
+                                class="fas fa-envelope"></i> Email Us</a>
+                        <a href="sms:2028604083" class="cta-link cta-sms"><i class="fas fa-sms"></i> Text Us</a>
+                    </div>
+                </div>
+                <div class="map-wrap">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3100.5!2d-77.05!3d39.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7cf0a0a0a0a0a%3A0xabcdef1234567890!2s2%20Piping%20Rock%20Dr%2C%20Silver%20Spring%2C%20MD%2020905!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="foot-wrap">
+            <div class="foot-brand"><span>Trujillana</span> Multi Service Solutions</div>
+            <div class="foot-slogan">"Your Property, Professionally Managed."</div>
+            <p>&copy; 2026 Trujillana Multi Service Solutions. All rights reserved. | Silver Spring, MD 20905</p>
+        </div>
+    </footer>
+
+    <script>
+        // Nav
+        const ham = document.getElementById('hamburger');
+        const menu = document.getElementById('navList');
+        ham.addEventListener('click', () => menu.classList.toggle('active'));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('active')));
+
+        // Gallery
+        let idx = 0;
+        const slides = document.querySelectorAll('.gslide');
+        const total = slides.length;
+        const num = document.getElementById('gNum');
+
+        function goSlide(n) {
+            slides[idx].classList.remove('on');
+            idx = (n + total) % total;
+            slides[idx].classList.add('on');
+            num.textContent = `${idx + 1} / ${total}`;
+        }
+
+        document.getElementById('gNext').addEventListener('click', () => goSlide(idx + 1));
+        document.getElementById('gPrev').addEventListener('click', () => goSlide(idx - 1));
+
+        // Keyboard
+        document.addEventListener('keydown', e => { if (e.key === 'ArrowRight') goSlide(idx + 1); if (e.key === 'ArrowLeft') goSlide(idx - 1) });
+
+        // Touch
+        let startX = 0;
+        const stage = document.getElementById('galStage');
+        stage.addEventListener('touchstart', e => startX = e.changedTouches[0].screenX, { passive: true });
+        stage.addEventListener('touchend', e => { const dx = e.changedTouches[0].screenX - startX; if (dx < -50) goSlide(idx + 1); if (dx > 50) goSlide(idx - 1) });
+
+        // Autoplay
+        let auto = setInterval(() => goSlide(idx + 1), 5000);
+        stage.addEventListener('mouseenter', () => clearInterval(auto));
+        stage.addEventListener('mouseleave', () => auto = setInterval(() => goSlide(idx + 1), 5000));
+    </script>
+</body>
+
+</html>
