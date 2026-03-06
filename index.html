@@ -585,6 +585,36 @@
         }
 
         /* ═══ GALLERY ═══ */
+        /* videos dentro de gallery */
+        .gslide video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+
+        /* cuando el slide está activo */
+        .gslide.on video {
+            display: block;
+        }
+
+        /* play button overlay */
+        .video-play {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .video-play i {
+            font-size: 70px;
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+        }
+
+
         .gallery {
             background: var(--royal)
         }
@@ -649,8 +679,8 @@
         .gslide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: .9
+            object-fit: contain;
+            background: #000;
         }
 
         .gslide-grad {
@@ -1018,7 +1048,7 @@
                             class="lbl">Years Experience</span>
                     </div>
                     <div class="hbox">
-                        <div class="icon"><i class="fas fa-tools"></i></div><span class="val">5</span><span
+                        <div class="icon"><i class="fas fa-tools"></i></div><span class="val">7</span><span
                             class="lbl">Core Services</span>
                     </div>
                     <div class="hbox">
@@ -1044,7 +1074,8 @@
                     <div class="sec-line"></div>
                     <p>Trujillana Multi Service Solutions is a Maryland-based property service company led by
                         <strong>Florinda Rojas</strong>. Our company was built on responsibility, hard work, and a
-                        strong commitment to delivering dependable results.</p>
+                        strong commitment to delivering dependable results.
+                    </p>
                     <p>We understand that maintaining and improving a property requires versatility and attention to
                         detail. That is why we offer complete multi-service solutions tailored to homeowners, property
                         managers, and businesses throughout Silver Spring and surrounding areas.</p>
@@ -1153,6 +1184,28 @@
                         <li>Exterior upkeep</li>
                     </ul>
                 </div>
+                <div class="svc-card">
+                    <div class="svc-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Welding</h3>
+                    <ul>
+                        <li>Handrail repair</li>
+                        <li>Handrail fabrication</li>
+                        <li>Iron fence fabrication</li>
+                        <li>Custom metal work</li>
+                    </ul>
+                </div>
+
+                <div class="svc-card">
+                    <div class="svc-icon"><i class="fas fa-snowplow"></i></div>
+                    <h3>Snow Removal</h3>
+                    <ul>
+                        <li>Driveway snow removal</li>
+                        <li>Sidewalk clearing</li>
+                        <li>Parking lot snow removal</li>
+                        <li>Ice control & salting</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1169,6 +1222,50 @@
             </div>
             <div class="gal-shell">
                 <div class="gal-stage" id="galStage">
+                    <!-- VIDEO 1 -->
+                    <div class="gslide on">
+                        <video autoplay loop playsinline>
+                            <source src="img/video_1.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play"><i class="fas fa-play-circle"></i></div>
+                        <div class="gslide-grad"></div>
+                    </div>
+
+                    <!-- VIDEO 2 -->
+                    <div class="gslide">
+                        <video autoplay loop playsinline>
+                            <source src="img/video_2.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play"><i class="fas fa-play-circle"></i></div>
+                        <div class="gslide-grad"></div>
+                    </div>
+
+                    <!-- VIDEO 3 -->
+                    <div class="gslide">
+                        <video autoplay loop playsinline>
+                            <source src="img/video_3.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play"><i class="fas fa-play-circle"></i></div>
+                        <div class="gslide-grad"></div>
+                    </div>
+
+                    <!-- VIDEO 4 -->
+                    <div class="gslide">
+                        <video autoplay loop playsinline>
+                            <source src="img/video_4.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play"><i class="fas fa-play-circle"></i></div>
+                        <div class="gslide-grad"></div>
+                    </div>
+
+                    <!-- VIDEO 5 -->
+                    <div class="gslide">
+                        <video autoplay loop playsinline>
+                            <source src="img/video_5.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play"><i class="fas fa-play-circle"></i></div>
+                        <div class="gslide-grad"></div>
+                    </div>
                     <div class="gslide on"><img src="img/1.jpg" alt="Project 1">
                         <div class="gslide-grad"></div>
                     </div>
@@ -1212,6 +1309,27 @@
                         <div class="gslide-grad"></div>
                     </div>
                     <div class="gslide"><img src="img/15.jpg" alt="Project 15">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/16.jpg" alt="Project 16">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/17.jpg" alt="Project 17">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/18.jpg" alt="Project 18">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/19.jpg" alt="Project 19">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/20.jpg" alt="Project 20">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/21.jpg" alt="Project 21">
+                        <div class="gslide-grad"></div>
+                    </div>
+                    <div class="gslide"><img src="img/22.jpg" alt="Project 22">
                         <div class="gslide-grad"></div>
                     </div>
                     <button class="gal-nav gal-prev" id="gPrev"><i class="fas fa-chevron-left"></i></button>
@@ -1281,42 +1399,59 @@
     </footer>
 
     <script>
-        // Nav
-        const ham = document.getElementById('hamburger');
-        const menu = document.getElementById('navList');
-        ham.addEventListener('click', () => menu.classList.toggle('active'));
-        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('active')));
 
-        // Gallery
-        let idx = 0;
-        const slides = document.querySelectorAll('.gslide');
-        const total = slides.length;
-        const num = document.getElementById('gNum');
+        const slides = document.querySelectorAll(".gslide");
+        const prev = document.querySelector(".gal-prev");
+        const next = document.querySelector(".gal-next");
+        const num = document.querySelector(".gal-num");
 
-        function goSlide(n) {
-            slides[idx].classList.remove('on');
-            idx = (n + total) % total;
-            slides[idx].classList.add('on');
-            num.textContent = `${idx + 1} / ${total}`;
+        let index = 0;
+
+        function showSlide(i) {
+
+            slides.forEach((s) => {
+                s.classList.remove("on");
+
+                const vid = s.querySelector("video");
+                if (vid) {
+                    vid.pause();
+                    vid.currentTime = 0;
+                }
+            });
+
+            slides[i].classList.add("on");
+
+            const activeVideo = slides[i].querySelector("video");
+            if (activeVideo) {
+                activeVideo.play();
+            }
+
+            num.textContent = (i + 1) + " / " + slides.length;
         }
 
-        document.getElementById('gNext').addEventListener('click', () => goSlide(idx + 1));
-        document.getElementById('gPrev').addEventListener('click', () => goSlide(idx - 1));
+        next.onclick = () => {
+            index++;
+            if (index >= slides.length) index = 0;
+            showSlide(index);
+        }
 
-        // Keyboard
-        document.addEventListener('keydown', e => { if (e.key === 'ArrowRight') goSlide(idx + 1); if (e.key === 'ArrowLeft') goSlide(idx - 1) });
+        prev.onclick = () => {
+            index--;
+            if (index < 0) index = slides.length - 1;
+            showSlide(index);
+        }
 
-        // Touch
-        let startX = 0;
-        const stage = document.getElementById('galStage');
-        stage.addEventListener('touchstart', e => startX = e.changedTouches[0].screenX, { passive: true });
-        stage.addEventListener('touchend', e => { const dx = e.changedTouches[0].screenX - startX; if (dx < -50) goSlide(idx + 1); if (dx > 50) goSlide(idx - 1) });
+        /* autoplay slider */
+        setInterval(() => {
+            index++;
+            if (index >= slides.length) index = 0;
+            showSlide(index);
+        }, 7000);
 
-        // Autoplay
-        let auto = setInterval(() => goSlide(idx + 1), 5000);
-        stage.addEventListener('mouseenter', () => clearInterval(auto));
-        stage.addEventListener('mouseleave', () => auto = setInterval(() => goSlide(idx + 1), 5000));
+        showSlide(index);
+
     </script>
+
 </body>
 
 </html>
